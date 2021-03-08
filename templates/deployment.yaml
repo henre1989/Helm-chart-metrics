@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  labels:
+    app: {{ .Release.Name }}-python
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      project: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        project: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: disk-metrics1
+          image: {{ .Values.image }}
+
+        - name: pushgateway
+          image: prom/pushgateway
+          ports:
+            - containerPort: 9091

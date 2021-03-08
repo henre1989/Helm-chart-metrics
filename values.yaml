@@ -1,0 +1,3 @@
+image: henre1989/disk_metrics:latest
+
+replicaCount: 1
