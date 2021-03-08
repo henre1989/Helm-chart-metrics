@@ -15,15 +15,16 @@ spec:
         project: {{ .Release.Name }}
     spec:
       containers:
-        - name: disk-metrics1
-          image: {{ .Values.image }}
-          - mountPath: /usr/src/app/settings
-              name: host-settings
+      - name: disk-metrics1
+        image: {{ .Values.image }}
+        volumeMounts:
+        - mountPath: /usr/src/app/settings
+          name: host-settings
 
-        - name: pushgateway
-          image: prom/pushgateway
-          ports:
-            - containerPort: 9091
+      - name: pushgateway
+        image: prom/pushgateway
+        ports:
+          - containerPort: 9091
 
       volumes:
         - name: host-settings
