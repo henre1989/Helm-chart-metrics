@@ -20,6 +20,7 @@ spec:
         volumeMounts:
         - name: host-settings
           mountPath: /usr/src/app/settings
+          subPath: hosts.conf
 
       - name: pushgateway
         image: prom/pushgateway
