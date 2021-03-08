@@ -19,8 +19,7 @@ spec:
         image: {{ .Values.image }}
         volumeMounts:
         - name: host-settings
-          mountPath: /usr/src/app/settings
-          subPath: hosts.conf
+          mountPath: /usr/src/app/settings/hosts.conf:
 
       - name: pushgateway
         image: prom/pushgateway
@@ -31,4 +30,5 @@ spec:
         - name: host-settings
           hostPath:
             path: {{ .Values.pathtosettings }}
+            type: FileOrCreate
 
