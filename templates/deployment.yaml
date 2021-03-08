@@ -30,5 +30,5 @@ spec:
         - name: host-settings
           hostPath:
             path: {{ .Values.pathtosettings }}
-            #type: FileOrCreate
+            type: Directory
 
