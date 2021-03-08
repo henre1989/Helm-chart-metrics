@@ -2,4 +2,4 @@ image: henre1989/disk-metrics:latest
 
 replicaCount: 1
 
-pathtosettings: /home/server1/Helm-chart-metrics/settings/hosts.conf
+pathtosettings: /home/server1/Helm-chart-metrics/settings
