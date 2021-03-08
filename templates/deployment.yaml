@@ -28,4 +28,4 @@ spec:
       volumes:
         - name: host-settings
           hostPath:
-            path: {{ .Values.path-to-settings }}
+            path: {{ .Values.pathtosettings }}
