@@ -1,4 +1,4 @@
-image: henre1989/disk_metrics:latest
+image: henre1989/disk-metrics:latest
 
 replicaCount: 1
 
