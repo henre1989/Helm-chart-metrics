@@ -18,8 +18,8 @@ spec:
       - name: disk-metrics1
         image: {{ .Values.image }}
         volumeMounts:
-        - mountPath: /usr/src/app/settings
-          name: host-settings
+        - name: host-settings
+          mountPath: /usr/src/app/settings
 
       - name: pushgateway
         image: prom/pushgateway
@@ -30,3 +30,4 @@ spec:
         - name: host-settings
           hostPath:
             path: {{ .Values.pathtosettings }}
+            type: Directory
